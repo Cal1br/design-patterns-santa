@@ -5,7 +5,7 @@ import me.cal1br.santaworkshop.toy.BikeToy;
 public class BikeFactory extends AbstractFactory<BikeToy> {
 
     public BikeFactory() {
-        super(BikeToy.class);
+        super(BikeToy.class, BikeFactory.class);
     }
 
     @Override
