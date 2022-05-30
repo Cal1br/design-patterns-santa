@@ -18,7 +18,7 @@ class SantaClaus {
 
 However, there is a better way to implement the **Singleton** pattern in **Java**, and that is achieved through using **enum**.
 This way we are protected against malicious attacks (such as a serialization attack) and there is always a guarantee
-that there is exactly one instance.\
+that there is exactly one instance.
 
 There are several singletons in this app:
 * [Santa Claus](src/me/cal1br/santaworkshop/entity/SantaClaus.java)
