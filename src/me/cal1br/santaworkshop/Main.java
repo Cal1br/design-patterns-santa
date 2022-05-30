@@ -3,6 +3,7 @@ package me.cal1br.santaworkshop;
 import me.cal1br.santaworkshop.entity.Elf;
 import me.cal1br.santaworkshop.entity.MagicBoard;
 import me.cal1br.santaworkshop.entity.SantaClaus;
+import me.cal1br.santaworkshop.entity.Workshop;
 
 public class Main {
 
@@ -17,7 +18,10 @@ public class Main {
         MagicBoard.INSTANCE.subscribe(elf2);
 
         santaClaus.makeToys();
-        // write your code here
+
+        System.out.println("\nFinal Statistics:" +
+                "\nEmployed elves: " + Elf.getNumberOfElves() +
+                "\nCreated toys: " + Workshop.INSTANCE.checkoutToys());
     }
 }
 

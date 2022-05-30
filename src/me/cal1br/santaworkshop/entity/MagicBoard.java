@@ -7,8 +7,10 @@ import me.cal1br.santaworkshop.toy.Toy;
 import java.util.LinkedList;
 import java.util.List;
 
+//Enum singleton, see Effective Java 3rd e. Item 3
 public enum MagicBoard implements Publisher {
     INSTANCE;
+
     private final List<Observer> subscribers = new LinkedList<>();
     private Class<? extends Toy> state;
 
@@ -16,6 +18,7 @@ public enum MagicBoard implements Publisher {
     public void subscribe(final Observer observer) {
         this.subscribers.add(observer);
     }
+
 
     @Override
     public void unsubscribe(final Observer observer) {
@@ -32,7 +35,7 @@ public enum MagicBoard implements Publisher {
 
     private void notifySubscribers() {
         for (final Observer subscriber : subscribers) {
-            subscriber.notify(state);
+            subscriber.update(state);
         }
     }
 }

@@ -17,12 +17,16 @@ public class Elf implements Observer {
         this.id = idCounter.getAndIncrement();
     }
 
+    public static Long getNumberOfElves() {
+        return idCounter.get();
+    }
+
     @Override
-    public void notify(final Class<? extends Toy> toyToMake) {
+    public void update(final Class<? extends Toy> toyToMake) {
 
         final Toy toy = AbstractFactory.Provider.INSTANCE
                 .getFactory(toyToMake)
                 .create();
-        System.out.println("Created one " + toy + " by elf id: " + id);
+        Workshop.INSTANCE.addToyToStorage(toy);
     }
 }

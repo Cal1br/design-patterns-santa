@@ -12,19 +12,31 @@ import java.util.concurrent.ThreadLocalRandom;
 public enum SantaClaus {
     INSTANCE;
 
-    final Random random = ThreadLocalRandom.current();
-
-    //    MagicBoard board;
     public void makeToys() {
-        System.out.println("Good morning! Time to make toys!");
-        thinkOfToy().execute();
-
+        for (int i = 0; i < 100; i++) {
+            System.out.println("Good morning! Time to make toys!");
+            thinkOfToy().execute();
+            employMoreElves();
+            System.out.println("Night...");
+        }
     }
 
     private Command thinkOfToy() {
+        final Random random = ThreadLocalRandom.current();
         if (random.nextInt(100) > 50) {
             return new MakeBikesCommand();
         }
         return new MakeDollsCommand();
+    }
+
+    private void employMoreElves() {
+        final Random random = ThreadLocalRandom.current();
+        final int randomInt = random.nextInt(100);
+        if (randomInt > 75) {
+            System.out.println("Time to employ more elves!");
+            for (int i = 100 - randomInt; i > 0; i--) {
+                MagicBoard.INSTANCE.subscribe(new Elf());
+            }
+        }
     }
 }
