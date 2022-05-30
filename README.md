@@ -51,11 +51,11 @@ tools at our disposal. That is why we do it manually.
 
 Using this pattern, we can have many objects, react to a change of state of a `Publisher` object. The `Publisher` holds references to these `Observers` and calls their `update()` method, which is a part of the `Observer` interface.\
 In this app, after seeing the magic board update, the `Elves` get to work and create the requested `Toy`.
-The *Elves* observe the `MagicBoard`.\
-[Observer Interface](src/me/cal1br/santaworkshop/observer/Observer.java)\
-[Observer Implementation: Elf](src/me/cal1br/santaworkshop/entity/Elf.java)\
-[Publisher Interface](src/me/cal1br/santaworkshop/publisher/Publisher.java)\
-[Publisher Implementation: MagicBoard](src/me/cal1br/santaworkshop/entity/MagicBoard.java)
+The *Elves* observe the `MagicBoard`.
+* [Observer Interface](src/me/cal1br/santaworkshop/observer/Observer.java)
+* [Observer Implementation: Elf](src/me/cal1br/santaworkshop/entity/Elf.java)
+* [Publisher Interface](src/me/cal1br/santaworkshop/publisher/Publisher.java)
+* [Publisher Implementation: MagicBoard](src/me/cal1br/santaworkshop/entity/MagicBoard.java)
 
 ## Usage of Class Tokens instead of String
 
