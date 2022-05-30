@@ -27,7 +27,7 @@ There are several singletons in this app:
 * [Factory Provider](src/me/cal1br/santaworkshop/factory/AbstractFactory.java)
 
 *Reference: Effective Java 3rd edition Item 3*\
-*Serialization attack: Effective Java 3rd edition Item 89*\
+*Serialization attack: Effective Java 3rd edition Item 89*
 ## Command pattern
 
 The **command** pattern is very useful where we have a GUI application. Thanks to it, we can avoid huge amounts of code duplication.\
